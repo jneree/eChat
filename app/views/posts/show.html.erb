@@ -1,26 +1,44 @@
-<button class="btn btn-alert">
-  <%= link_to "retour", root_path, {:style=>"color:#fff;"}%>
-</button>
 
-<h1 class="title">
-  <%= @post.title %>
-</h1>
+<div class="row">
+  <div class="col-sm-2  vcenter">
+    <h2>
+    <button class="btn btn-alert">
+      <%= link_to "Back", root_path, {:style=>"color:#fff;"}%>
+    </button>
+    </h2>
+  </div>
 
-<p class="date">
-  Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-| <%= link_to 'Edit', edit_post_path(@post) %>
-| <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?'} %>
-</p>
+  <div class="col-sm-6">
 
-<p class="body">
-  <%= @post.body %>
-</p>
 
-<div id="comments">
-  <h2><%= @post.comments.count %> Comments</h2>
-  <%= render @post.comments %>
+    <h2 class="text-center" style="font-weight:700">
+      <%= @post.title%>
+    </h1>
 
-  <h3>Add a comment:</h3>
-  <%= render "comments/form" %>
+    <p class="text-center">
+      Room created <%= time_ago_in_words(@post.created_at) %> Ago
+      | <%= link_to 'Edit', edit_post_path(@post) %>
+      | <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?'} %>
+    </p>
+
+    <p style="font-style:italic">
+      <%= @post.body %>
+    </p>
+  </div>
 
 </div>
+
+
+<hr>
+
+<h3 class="myMarginBot"><%= @post.comments.count %> messages received</h3>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-1">
+    <%= render @post.comments %>
+  </div>
+
+</div>
+
+<h3>Drop a message:</h3>
+<%= render "comments/form" %>

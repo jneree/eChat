@@ -10,6 +10,7 @@
 
 </div>
 <% end %>
+
 <p>
   <br>
   <%= f.label :title , :class => 'col-sm-4 col-sm-offset-4'  %><br>
@@ -17,11 +18,11 @@
 </p>
 
 <p>
-  <%= f.label :message, :class => 'col-sm-4 col-sm-offset-4 myMargin'   %><br>
+  <%= f.label :subject, :class => 'col-sm-4 col-sm-offset-4 myMargin'   %><br>
   <%= f.text_area :body , :class => 'col-sm-4 col-sm-offset-4'  %>
 </p>
 
 <p>
-  <%= f.submit 'Create Room', :class => 'col-sm-2 col-sm-offset-5 btn btn-success myMargin' %>
+  <%= f.submit 'Create Room', :class => 'col-sm-2 col-sm-offset-5 btn btn-success myMarginTop' %>
 </p>
 <% end %>
