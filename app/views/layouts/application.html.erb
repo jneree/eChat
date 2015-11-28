@@ -5,10 +5,43 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css">
 </head>
 <body>
+  <div class="container">
+    <div class="page-header">
+      <h1>Welcome to ChatX!</h1>
+      <h3>Join one of the chat room... Or create yours!</h3>
+    </div>
 
-<%= yield %>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-6 col-md-3 col-md-offset-9">
+        <%= link_to "New Room", new_post_path, class:'btn btn-info' %>
+        <button class="btn btn-warning">Log Out</button>
+      </div>
+
+    </div>
+
+    <div class="col-sm-12">
+      <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert") %>
+
+      <% end %>
+
+      <%= yield %>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
