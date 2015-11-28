@@ -8,6 +8,8 @@ Installation
     bundle install
     rake db:migrate
 
-Start the local server:
+Démarrer le serveur local:
 
     bundle exec rails s
+
+Vous pouvez maintenant avoir accès à l'app via 127.0.0.1:3000 dans le navigateur.
