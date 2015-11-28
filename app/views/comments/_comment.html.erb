@@ -1,13 +1,13 @@
 
   <blockquote class="myMargin">
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <p class="comment_name"><strong><%= comment.name %> </strong>said:</p>
       </div>
       <div class="col-sm-8">
         <p class="comment_body"><%= comment.body %></p>
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-1">
         <p><%= link_to 'Delete message', [comment.post, comment], method: :delete, class:"btn btn-primary myMarginTop", data: { confirm: 'Are you sure?'} %></p>
       </div>
     </div>
