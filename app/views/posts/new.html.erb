@@ -1,20 +1,34 @@
 <div class="col-sm-12">
+  <button class="btn btn-alert">
+    <%= link_to "retour", root_path, {:style=>"color:#fff;"} %>
+  </button>
+  <h1>Create a new room</h1>
 
-<h1>Create a new room</h1>
+  <%= form_for :post, url: posts_path do |f| %>
+  <% if @post.errors.any? %>
+  <div id="errors">
+    <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving</h2>
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end%>
+    </ul>
 
-<%= form_for :post, url: posts_path do |f| %>
-<p>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-</p>
+  </div>
+  <% end %>
+  <p>
+    <br>
+    <%= f.label :title , :class => 'col-sm-4 col-sm-offset-4'  %><br>
+    <%= f.text_field :title, :class => 'col-sm-4 col-sm-offset-4'  %>
+  </p>
 
-<p>
-  <%= f.label :body %><br>
-  <%= f.text_area :boday %>
-</p>
+  <p>
+    <%= f.label :message, :class => 'col-sm-4 col-sm-offset-4 myMargin'   %><br>
+    <%= f.text_area :body , :class => 'col-sm-4 col-sm-offset-4'  %>
+  </p>
 
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
+  <p>
+    <%= f.submit 'Create Room', :class => 'col-sm-2 col-sm-offset-5 btn btn-success myMargin' %>
+  </p>
+  <% end %>
 </div>
