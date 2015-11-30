@@ -1,5 +1,9 @@
 == README
 
+Update 
+============
+Cette web app est déployée sur Heroku: https://glacial-everglades-3548.herokuapp.com/
+
 Installation
 ============
 
